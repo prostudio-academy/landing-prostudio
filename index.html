@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guia Prático – Criadores de Conteúdo | ProStudio Academy</title>
+  <!-- Tailwind Play CDN (rápido para protótipo / landing estática) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Baixe grátis o Guia Prático - Criadores de Conteúdo e transforme seu home studio." />
+</head>
+<body class="bg-[#0b0f14] text-white antialiased">
+  <main class="min-h-screen flex items-center justify-center py-12 px-6">
+    <div class="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <!-- LEFT: COPY + FORM -->
+      <section class="px-6">
+        <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-4">
+          🚀 Transforme seu conteúdo com iluminação e acústica profissionais
+        </h1>
+        <p class="text-gray-300 mb-6">
+          Baixe gratuitamente o <strong>Guia Prático – Criadores de Conteúdo</strong>.
+          Aprenda passo a passo como montar um home studio com qualidade profissional — iluminação, acústica e equipamentos recomendados.
+        </p>
+
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 mb-6">
+          <li class="flex items-start gap-3"><span class="text-lime-400 font-bold">•</span> Checklist prático de iluminação</li>
+          <li class="flex items-start gap-3"><span class="text-lime-400 font-bold">•</span> Soluções para acústica</li>
+          <li class="flex items-start gap-3"><span class="text-lime-400 font-bold">•</span> Equipamentos recomendados</li>
+          <li class="flex items-start gap-3"><span class="text-lime-400 font-bold">•</span> Implementação imediata</li>
+        </ul>
+
+        <!-- FORM -->
+        <div class="bg-[#07101a]/60 p-6 rounded-lg shadow-lg">
+          <form id="leadForm" class="space-y-4" autocomplete="off">
+            <div>
+              <label class="block text-sm text-gray-300">Nome</label>
+              <input id="name" name="name" required class="mt-1 w-full rounded-md px-3 py-2 text-black" placeholder="Seu nome" />
+            </div>
+            <div>
+              <label class="block text-sm text-gray-300">E-mail</label>
+              <input id="email" name="email" type="email" required class="mt-1 w-full rounded-md px-3 py-2 text-black" placeholder="seu@exemplo.com" />
+            </div>
+
+            <button id="submitBtn" type="submit" class="w-full bg-lime-500 hover:bg-lime-600 text-black font-bold py-3 rounded-md">
+              📥 Baixar Guia Gratuitamente
+            </button>
+
+            <p id="formNote" class="text-xs text-gray-400 mt-2">
+              Ao enviar, você receberá o e-book no e-mail informado. Siga também nosso Instagram <strong>@prostudio.tech</strong>.
+            </p>
+          </form>
+
+          <div id="status" class="mt-4 text-sm"></div>
+        </div>
+
+        <p class="text-xs text-gray-500 mt-6">
+          © 2025 – ProStudio Academy. Todos os direitos reservados.
+        </p>
+      </section>
+
+      <!-- RIGHT: MOCKUP / VISUAL -->
+      <aside class="px-6 flex items-center justify-center">
+        <div class="w-full max-w-md">
+          <!-- substitua esta imagem por seu mockup 3D PNG com fundo transparente -->
+          <img id="mockup" src="ILUMINACAO_MOCKUP_PLACEHOLDER.png" alt="Capa do Guia Prático" class="mx-auto drop-shadow-2xl" />
+          <p class="text-center text-gray-400 text-sm mt-4">Guia Prático – Criadores de Conteúdo • ProStudio Academy</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    // --> SUBSTITUA a URL abaixo pela URL do seu Google Apps Script Web App (depois de publicar)
+    const APPS_SCRIPT_URL = "REPLACE_WITH_YOUR_WEBAPP_URL";
+
+    const form = document.getElementById('leadForm');
+    const statusDiv = document.getElementById('status');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusDiv.textContent = '';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      try {
+        const res = await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, source: 'landing_prostudio' })
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.status === 'ok') {
+          statusDiv.innerHTML = '<span class="text-green-400 font-semibold">E-mail enviado! Verifique sua caixa de entrada (e spam).</span>';
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Erro ao enviar. Tente novamente em alguns minutos.');
+        }
+      } catch (err) {
+        statusDiv.innerHTML = `<span class="text-red-400">Erro: ${err.message}</span>`;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '📥 Baixar Guia Gratuitamente';
+      }
+    });
+  </script>
+</body>
+</html>
