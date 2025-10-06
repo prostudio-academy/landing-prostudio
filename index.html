@@ -1,113 +1,147 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Guia Prático – Criadores de Conteúdo | ProStudio Academy</title>
-  <!-- Tailwind Play CDN (rápido para protótipo / landing estática) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="description" content="Baixe grátis o Guia Prático - Criadores de Conteúdo e transforme seu home studio." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Prático para Criadores de Conteúdo | ProStudio Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0b0b0f;
+      color: #fff;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      background: linear-gradient(135deg, #2b0055, #000);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #a855f7;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      margin-top: 1rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .benefits {
+      margin: 3rem 0;
+    }
+    .benefits h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #a855f7;
+    }
+    .benefits ul {
+      list-style: none;
+      padding: 0;
+    }
+    .benefits ul li {
+      background: #1a1a1f;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-left: 5px solid #a855f7;
+      border-radius: 8px;
+    }
+    form {
+      background: #1a1a1f;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0px 0px 20px rgba(168,85,247,0.3);
+    }
+    form input {
+      width: 100%;
+      padding: 1rem;
+      margin: 0.7rem 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    form button {
+      background: #a855f7;
+      color: #fff;
+      border: none;
+      width: 100%;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    form button:hover {
+      background: #7e22ce;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    footer a {
+      color: #a855f7;
+      text-decoration: none;
+    }
+  </style>
 </head>
-<body class="bg-[#0b0f14] text-white antialiased">
-  <main class="min-h-screen flex items-center justify-center py-12 px-6">
-    <div class="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-      <!-- LEFT: COPY + FORM -->
-      <section class="px-6">
-        <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-4">
-          🚀 Transforme seu conteúdo com iluminação e acústica profissionais
-        </h1>
-        <p class="text-gray-300 mb-6">
-          Baixe gratuitamente o <strong>Guia Prático – Criadores de Conteúdo</strong>.
-          Aprenda passo a passo como montar um home studio com qualidade profissional — iluminação, acústica e equipamentos recomendados.
-        </p>
+<body>
 
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 mb-6">
-          <li class="flex items-start gap-3"><span class="text-lime-400 font-bold">•</span> Checklist prático de iluminação</li>
-          <li class="flex items-start gap-3"><span class="text-lime-400 font-bold">•</span> Soluções para acústica</li>
-          <li class="flex items-start gap-3"><span class="text-lime-400 font-bold">•</span> Equipamentos recomendados</li>
-          <li class="flex items-start gap-3"><span class="text-lime-400 font-bold">•</span> Implementação imediata</li>
-        </ul>
+  <header>
+    <h1>Transforme seu Espaço em um Estúdio Profissional</h1>
+    <p>Baixe agora o <strong>Guia Prático</strong> gratuito da ProStudio Academy e eleve a qualidade dos seus vídeos.</p>
+  </header>
 
-        <!-- FORM -->
-        <div class="bg-[#07101a]/60 p-6 rounded-lg shadow-lg">
-          <form id="leadForm" class="space-y-4" autocomplete="off">
-            <div>
-              <label class="block text-sm text-gray-300">Nome</label>
-              <input id="name" name="name" required class="mt-1 w-full rounded-md px-3 py-2 text-black" placeholder="Seu nome" />
-            </div>
-            <div>
-              <label class="block text-sm text-gray-300">E-mail</label>
-              <input id="email" name="email" type="email" required class="mt-1 w-full rounded-md px-3 py-2 text-black" placeholder="seu@exemplo.com" />
-            </div>
+  <div class="container">
+    <section class="benefits">
+      <h2>O que você vai aprender:</h2>
+      <ul>
+        <li>✅ Como melhorar iluminação e acústica sem gastar muito</li>
+        <li>✅ Erros comuns que derrubam a qualidade dos seus vídeos</li>
+        <li>✅ Equipamentos recomendados para transformar seu estúdio</li>
+        <li>✅ Técnicas práticas para vídeos com qualidade profissional</li>
+      </ul>
+    </section>
 
-            <button id="submitBtn" type="submit" class="w-full bg-lime-500 hover:bg-lime-600 text-black font-bold py-3 rounded-md">
-              📥 Baixar Guia Gratuitamente
-            </button>
+    <section class="form-section">
+      <form id="leadForm">
+        <input type="text" name="nome" placeholder="Seu Nome" required>
+        <input type="email" name="email" placeholder="Seu Email" required>
+        <input type="tel" name="whatsapp" placeholder="Seu WhatsApp" required>
+        <input type="hidden" name="data" id="data">
+        <button type="submit">Quero meu Guia Grátis</button>
+      </form>
+    </section>
+  </div>
 
-            <p id="formNote" class="text-xs text-gray-400 mt-2">
-              Ao enviar, você receberá o e-book no e-mail informado. Siga também nosso Instagram <strong>@prostudio.tech</strong>.
-            </p>
-          </form>
-
-          <div id="status" class="mt-4 text-sm"></div>
-        </div>
-
-        <p class="text-xs text-gray-500 mt-6">
-          © 2025 – ProStudio Academy. Todos os direitos reservados.
-        </p>
-      </section>
-
-      <!-- RIGHT: MOCKUP / VISUAL -->
-      <aside class="px-6 flex items-center justify-center">
-        <div class="w-full max-w-md">
-          <!-- substitua esta imagem por seu mockup 3D PNG com fundo transparente -->
-          <img id="mockup" src="ILUMINACAO_MOCKUP_PLACEHOLDER.png" alt="Capa do Guia Prático" class="mx-auto drop-shadow-2xl" />
-          <p class="text-center text-gray-400 text-sm mt-4">Guia Prático – Criadores de Conteúdo • ProStudio Academy</p>
-        </div>
-      </aside>
-    </div>
-  </main>
+  <footer>
+    <p>© 2025 ProStudio Academy - <a href="https://instagram.com/prostudio.tech" target="_blank">@prostudio.tech</a></p>
+  </footer>
 
   <script>
-    // --> SUBSTITUA a URL abaixo pela URL do seu Google Apps Script Web App (depois de publicar)
-    const APPS_SCRIPT_URL = "REPLACE_WITH_YOUR_WEBAPP_URL";
+    // Preenche data automática
+    document.getElementById("data").value = new Date().toLocaleString();
 
-    const form = document.getElementById('leadForm');
-    const statusDiv = document.getElementById('status');
-    const submitBtn = document.getElementById('submitBtn');
+    // Submissão para Google Sheets
+    const scriptURL = "COLE_AQUI_SEU_SCRIPT_URL";
+    const form = document.getElementById("leadForm");
 
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener("submit", e => {
       e.preventDefault();
-      statusDiv.textContent = '';
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando...';
-
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-
-      try {
-        const res = await fetch(APPS_SCRIPT_URL, {
-          method: 'POST',
-          mode: 'cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, source: 'landing_prostudio' })
-        });
-
-        const data = await res.json();
-
-        if (res.ok && data.status === 'ok') {
-          statusDiv.innerHTML = '<span class="text-green-400 font-semibold">E-mail enviado! Verifique sua caixa de entrada (e spam).</span>';
-          form.reset();
-        } else {
-          throw new Error(data.message || 'Erro ao enviar. Tente novamente em alguns minutos.');
-        }
-      } catch (err) {
-        statusDiv.innerHTML = `<span class="text-red-400">Erro: ${err.message}</span>`;
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = '📥 Baixar Guia Gratuitamente';
-      }
+      fetch(scriptURL, { method: "POST", body: new FormData(form)})
+        .then(response => {
+          alert("🎉 Cadastro realizado com sucesso! Baixe seu guia agora.");
+          window.location.href = "https://drive.google.com/file/d/1YpcmaOh5Jya-oF9NMmxsuQt03fvdm4x_/view?usp=drive_link";
+        })
+        .catch(error => alert("Erro no envio, tente novamente."));
     });
   </script>
+
 </body>
 </html>
