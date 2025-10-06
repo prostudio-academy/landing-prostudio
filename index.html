@@ -3,61 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guia Prático para Criadores de Conteúdo | ProStudio Academy</title>
+  <title>Guia Grátis | ProStudio Academy</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --roxo: #a855f7;
+      --roxo-escuro: #7e22ce;
+      --preto: #0b0b0f;
+      --cinza: #1a1a1f;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0b0b0f;
+      background: var(--preto);
       color: #fff;
+      line-height: 1.5;
     }
     header {
       text-align: center;
-      padding: 4rem 2rem 2rem;
-      background: linear-gradient(135deg, #2b0055, #000);
+      padding: 5rem 2rem 3rem;
+      background: linear-gradient(135deg, var(--roxo), var(--preto));
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 700;
-      color: #a855f7;
+      color: #fff;
     }
     header p {
+      margin-top: 1rem;
       font-size: 1.2rem;
       color: #e0e0e0;
-      margin-top: 1rem;
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
+    .cta-button {
+      display: inline-block;
+      margin-top: 2rem;
+      background: var(--roxo);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: 0.3s;
     }
-    .benefits {
-      margin: 3rem 0;
-    }
-    .benefits h2 {
+    .cta-button:hover { background: var(--roxo-escuro); }
+    
+    .container { max-width: 1100px; margin: auto; padding: 3rem 2rem; }
+
+    .benefits h2, .testimonials h2, .form-section h2 {
       text-align: center;
-      font-size: 1.8rem;
-      color: #a855f7;
+      font-size: 2rem;
+      color: var(--roxo);
+      margin-bottom: 2rem;
     }
-    .benefits ul {
-      list-style: none;
-      padding: 0;
-    }
+    .benefits ul { list-style: none; }
     .benefits ul li {
-      background: #1a1a1f;
+      background: var(--cinza);
       margin: 1rem 0;
-      padding: 1rem;
-      border-left: 5px solid #a855f7;
+      padding: 1rem 1.2rem;
+      border-left: 5px solid var(--roxo);
       border-radius: 8px;
     }
+
+    .testimonials {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .testimonial {
+      background: var(--cinza);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(168,85,247,0.2);
+      transition: transform 0.3s;
+    }
+    .testimonial:hover { transform: translateY(-5px); }
+    .testimonial p { font-style: italic; margin-bottom: 1rem; }
+    .testimonial .author { font-weight: bold; color: var(--roxo); }
+
+    .timer-box {
+      text-align: center;
+      background: var(--cinza);
+      padding: 1.5rem;
+      margin: 2rem auto;
+      border-radius: 12px;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(168,85,247,0.25);
+    }
+    .timer-box h3 { margin-bottom: 1rem; color: var(--roxo); }
+    .timer { font-size: 2rem; font-weight: bold; }
+
     form {
-      background: #1a1a1f;
+      background: var(--cinza);
       padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0px 0px 20px rgba(168,85,247,0.3);
+      margin-top: 3rem;
+      box-shadow: 0 0 20px rgba(168,85,247,0.25);
     }
-    form input {
+    form input, form select {
       width: 100%;
       padding: 1rem;
       margin: 0.7rem 0;
@@ -66,7 +109,7 @@
       font-size: 1rem;
     }
     form button {
-      background: #a855f7;
+      background: var(--roxo);
       color: #fff;
       border: none;
       width: 100%;
@@ -76,64 +119,112 @@
       cursor: pointer;
       transition: 0.3s;
     }
-    form button:hover {
-      background: #7e22ce;
-    }
+    form button:hover { background: var(--roxo-escuro); }
+    form button:disabled { background: gray; cursor: not-allowed; }
+
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
       color: #aaa;
+      background: #050507;
     }
-    footer a {
-      color: #a855f7;
-      text-decoration: none;
-    }
+    footer a { color: var(--roxo); text-decoration: none; }
   </style>
 </head>
 <body>
 
+  <!-- HERO -->
   <header>
-    <h1>Transforme seu Espaço em um Estúdio Profissional</h1>
-    <p>Baixe agora o <strong>Guia Prático</strong> gratuito da ProStudio Academy e eleve a qualidade dos seus vídeos.</p>
+    <h1>Transforme Seu Espaço em um Estúdio Profissional</h1>
+    <p>Baixe grátis o guia da <strong>ProStudio Academy</strong> e aprenda os segredos da iluminação e acústica de alto nível.</p>
+    <a href="#form" class="cta-button">Quero meu Guia Grátis</a>
   </header>
 
-  <div class="container">
-    <section class="benefits">
-      <h2>O que você vai aprender:</h2>
-      <ul>
-        <li>✅ Como melhorar iluminação e acústica sem gastar muito</li>
-        <li>✅ Erros comuns que derrubam a qualidade dos seus vídeos</li>
-        <li>✅ Equipamentos recomendados para transformar seu estúdio</li>
-        <li>✅ Técnicas práticas para vídeos com qualidade profissional</li>
-      </ul>
-    </section>
+  <!-- BENEFÍCIOS -->
+  <div class="container benefits">
+    <h2>O que você vai aprender:</h2>
+    <ul>
+      <li>✅ Como melhorar iluminação e acústica gastando pouco</li>
+      <li>✅ Os erros comuns que derrubam a qualidade dos vídeos</li>
+      <li>✅ Equipamentos recomendados para transformar seu estúdio</li>
+      <li>✅ Técnicas práticas para vídeos com qualidade profissional</li>
+    </ul>
+  </div>
 
-    <section class="form-section">
-      <form id="leadForm">
-        <input type="text" name="nome" placeholder="Seu Nome" required>
-        <input type="email" name="email" placeholder="Seu Email" required>
-        <input type="tel" name="whatsapp" placeholder="Seu WhatsApp" required>
-        <input type="hidden" name="data" id="data">
-        <button type="submit">Quero meu Guia Grátis</button>
-      </form>
-    </section>
+  <!-- DEPOIMENTOS -->
+  <div class="container testimonials">
+    <h2>O que estão dizendo:</h2>
+    <div class="testimonial">
+      <p>"Esse guia mudou totalmente meu jeito de gravar vídeos. Hoje meu conteúdo tem padrão profissional!"</p>
+      <span class="author">— Ana, Criadora de Conteúdo</span>
+    </div>
+    <div class="testimonial">
+      <p>"Simples, prático e direto ao ponto. Melhorei meu estúdio caseiro sem gastar uma fortuna."</p>
+      <span class="author">— Lucas, Produtor Digital</span>
+    </div>
+    <div class="testimonial">
+      <p>"A ProStudio Academy realmente entende do assunto. Recomendo fortemente!"</p>
+      <span class="author">— Juliana, Streamer</span>
+    </div>
+  </div>
+
+  <!-- TIMER -->
+  <div class="timer-box">
+    <h3>Oferta disponível por tempo limitado!</h3>
+    <div class="timer" id="countdown">15:00</div>
+  </div>
+
+  <!-- FORMULÁRIO -->
+  <div class="container form-section" id="form">
+    <h2>Garanta seu Guia Grátis</h2>
+    <form id="leadForm">
+      <input type="text" name="nome" placeholder="Seu Nome" required>
+      <input type="email" name="email" placeholder="Seu Email" required>
+      
+      <!-- WhatsApp com seletor de países -->
+      <div style="display:flex; gap:8px; align-items:center; margin:0.7rem 0;">
+        <select id="countryCode" style="padding:1rem; border-radius:8px; border:none; background:#fff; color:#000; font-size:1rem;">
+          <!-- Lista básica, pode expandir com todos os países -->
+          <option value="+55" selected>🇧🇷 Brasil (+55)</option>
+          <option value="+1">🇺🇸 EUA (+1)</option>
+          <option value="+351">🇵🇹 Portugal (+351)</option>
+          <option value="+44">🇬🇧 Reino Unido (+44)</option>
+          <option value="+34">🇪🇸 Espanha (+34)</option>
+          <option value="+49">🇩🇪 Alemanha (+49)</option>
+          <option value="+33">🇫🇷 França (+33)</option>
+          <option value="+81">🇯🇵 Japão (+81)</option>
+          <option value="+39">🇮🇹 Itália (+39)</option>
+          <option value="+61">🇦🇺 Austrália (+61)</option>
+        </select>
+        <input type="tel" id="whatsappNumber" placeholder="WhatsApp" style="flex:1; padding:1rem; border-radius:8px; border:none;" required>
+      </div>
+
+      <input type="hidden" name="whatsapp" id="fullWhatsapp">
+      <input type="hidden" name="data" id="data">
+
+      <button type="submit" id="submitBtn">Quero meu Guia Agora</button>
+    </form>
   </div>
 
   <footer>
-    <p>© 2025 ProStudio Academy - <a href="https://instagram.com/prostudio.tech" target="_blank">@prostudio.tech</a></p>
+    <p>© 2025 ProStudio Academy — <a href="https://instagram.com/prostudio.tech" target="_blank">@prostudio.tech</a></p>
   </footer>
 
   <script>
     // Preenche data automática
     document.getElementById("data").value = new Date().toLocaleString();
 
-    // Submissão para Google Sheets
-    const scriptURL = "https://script.google.com/macros/s/AKfycbxEnL9x1OHi4DJ2_dEYEPJ8OnNDM5amH9rK3u7jhWU8_JsWo4mTynuHao1cDx2GV2057Q/exec";
+    const scriptURL = "COLE_AQUI_SEU_SCRIPT_URL";
     const form = document.getElementById("leadForm");
 
     form.addEventListener("submit", e => {
       e.preventDefault();
+      // Monta número completo com código do país
+      const countryCode = document.getElementById("countryCode").value;
+      const number = document.getElementById("whatsappNumber").value;
+      document.getElementById("fullWhatsapp").value = countryCode + " " + number;
+
       fetch(scriptURL, { method: "POST", body: new FormData(form)})
         .then(response => {
           alert("🎉 Cadastro realizado com sucesso! Baixe seu guia agora.");
@@ -141,7 +232,24 @@
         })
         .catch(error => alert("Erro no envio, tente novamente."));
     });
-  </script>
 
+    // Timer 15 minutos
+    let time = 15 * 60; // 15 minutos em segundos
+    const countdownEl = document.getElementById("countdown");
+    const submitBtn = document.getElementById("submitBtn");
+
+    const timer = setInterval(() => {
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+      countdownEl.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      time--;
+
+      if (time < 0) {
+        clearInterval(timer);
+        countdownEl.innerHTML = "Tempo expirado!";
+        submitBtn.disabled = true;
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
