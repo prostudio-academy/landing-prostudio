@@ -11,113 +11,79 @@
       --roxo-escuro: #7e22ce;
       --preto: #0a0a0f;
       --cinza: #15151b;
-      --glass: rgba(255,255,255,0.05);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
       background: var(--preto);
       color: #fff;
-      line-height: 1.6;
     }
-    header {
-      text-align: center;
-      padding: 5rem 2rem 6rem;
-      background: radial-gradient(circle at top left, var(--roxo), var(--preto) 70%);
-      position: relative;
+    .landing {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a0a0f, #1c1c22);
+      padding: 2rem;
+      align-items: center;
+      justify-content: center;
     }
-    header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: #fff;
-    }
-    header p {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      color: #ddd;
-    }
-    .cta-button {
-      display: inline-block;
-      margin-top: 2rem;
-      background: var(--roxo);
-      color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .cta-button:hover { background: var(--roxo-escuro); transform: scale(1.05); }
-
-    .container { max-width: 1100px; margin: auto; padding: 3rem 2rem; }
-
-    .benefits h2, .testimonials h2, .form-section h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      color: var(--roxo);
-      margin-bottom: 2rem;
-      font-weight: 600;
-    }
-    .benefits ul { list-style: none; max-width: 700px; margin: auto; }
-    .benefits ul li {
-      background: var(--cinza);
-      margin: 1rem 0;
-      padding: 1rem 1.2rem;
-      border-left: 5px solid var(--roxo);
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-    .benefits ul li:hover { background: #1f1f27; transform: translateX(5px); }
-
-    .testimonials {
-      margin-top: 4rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .testimonial {
-      background: var(--glass);
-      padding: 1.5rem;
-      border-radius: 16px;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: transform 0.3s;
-    }
-    .testimonial:hover { transform: translateY(-5px); }
-    .testimonial p { font-style: italic; margin-bottom: 1rem; color: #ccc; }
-    .testimonial .author { font-weight: bold; color: var(--roxo); }
-
-    .timer-box {
-      text-align: center;
-      background: var(--cinza);
-      padding: 1.5rem;
-      margin: 3rem auto;
-      border-radius: 12px;
-      max-width: 400px;
-      box-shadow: 0 0 25px rgba(168,85,247,0.25);
-    }
-    .timer-box h3 { margin-bottom: 1rem; color: var(--roxo); font-weight: 600; }
-    .timer { font-size: 2.2rem; font-weight: bold; letter-spacing: 2px; }
-
-    form {
-      background: var(--cinza);
-      padding: 2.5rem;
-      border-radius: 16px;
-      margin-top: 3rem;
-      box-shadow: 0 0 25px rgba(168,85,247,0.25);
+    .left {
+      flex: 1;
+      min-width: 300px;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      padding: 2rem;
     }
-    form input, form select {
+    .left h1 {
+      font-size: 2.8rem;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--roxo);
+      margin-bottom: 1rem;
+    }
+    .left p {
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 1rem;
+    }
+    .right {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+      background: #1c1c22;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(168,85,247,0.3);
+    }
+    .right h2 {
+      color: var(--roxo);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    form input {
       width: 100%;
       padding: 1rem;
-      margin: 0.7rem 0;
+      margin: 0.6rem 0;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-size: 1rem;
+    }
+    .timer-box {
+      text-align: center;
+      background: #2a2a33;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: inset 0 0 10px rgba(168,85,247,0.3);
+    }
+    .timer-box h3 {
+      font-size: 1rem;
+      color: var(--roxo);
+      margin-bottom: 0.5rem;
+    }
+    .timer {
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 2px;
     }
     form button {
       background: var(--roxo);
@@ -125,18 +91,24 @@
       border: none;
       width: 100%;
       padding: 1rem;
+      margin-top: 1rem;
       border-radius: 8px;
       font-size: 1.2rem;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
     }
-    form button:hover { background: var(--roxo-escuro); transform: scale(1.03); }
+    form button:hover { background: var(--roxo-escuro); }
     form button:disabled { background: gray; cursor: not-allowed; }
-
+    .privacy {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-top: 0.8rem;
+      text-align: center;
+    }
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 1rem;
       font-size: 0.9rem;
       color: #aaa;
       background: #050507;
@@ -145,108 +117,51 @@
   </style>
 </head>
 <body>
-
-  <!-- HERO -->
-  <header>
-    <h1>Transforme Seu Espaço em um Estúdio Profissional</h1>
-    <p>Baixe grátis o guia da <strong>ProStudio Academy</strong> e aprenda os segredos da iluminação e acústica de alto nível.</p>
-    <a href="#form" class="cta-button">Quero meu Guia Grátis</a>
-  </header>
-
-  <!-- BENEFÍCIOS -->
-  <div class="container benefits">
-    <h2>O que você vai aprender:</h2>
-    <ul>
-      <li>✅ Como melhorar iluminação e acústica gastando pouco</li>
-      <li>✅ Os erros comuns que derrubam a qualidade dos vídeos</li>
-      <li>✅ Equipamentos recomendados para transformar seu estúdio</li>
-      <li>✅ Técnicas práticas para vídeos com qualidade profissional</li>
-    </ul>
-  </div>
-
-  <!-- DEPOIMENTOS -->
-  <div class="container testimonials">
-    <h2>O que estão dizendo:</h2>
-    <div class="testimonial">
-      <p>"Esse guia mudou totalmente meu jeito de gravar vídeos. Hoje meu conteúdo tem padrão profissional!"</p>
-      <span class="author">— Ana, Criadora de Conteúdo</span>
+  <div class="landing">
+    <!-- Coluna Esquerda -->
+    <div class="left">
+      <h1>Guia Prático para Criadores de Conteúdo</h1>
+      <p>Aprenda a transformar seu espaço em um estúdio profissional com iluminação e acústica de alto nível.</p>
+      <p>Descubra os erros mais comuns, como evitá-los e veja quais equipamentos realmente fazem diferença.</p>
+      <p>Baixe agora gratuitamente e eleve a qualidade dos seus vídeos!</p>
     </div>
-    <div class="testimonial">
-      <p>"Simples, prático e direto ao ponto. Melhorei meu estúdio caseiro sem gastar uma fortuna."</p>
-      <span class="author">— Lucas, Produtor Digital</span>
+
+    <!-- Coluna Direita -->
+    <div class="right">
+      <h2>Quer melhorar seus vídeos?</h2>
+      <p style="text-align:center; margin-bottom:1rem;">Baixe agora o nosso ebook exclusivo.</p>
+      <form id="leadForm">
+        <input type="text" name="nome" placeholder="Nome completo" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
+        <input type="hidden" name="data" id="data">
+
+        <!-- Timer dentro do formulário -->
+        <div class="timer-box">
+          <h3>Disponível por tempo limitado!</h3>
+          <div class="timer" id="countdown">15:00</div>
+        </div>
+
+        <button type="submit" id="submitBtn">Fazer download do material</button>
+      </form>
+      <p class="privacy">Prometemos não utilizar suas informações de contato para enviar SPAM.</p>
     </div>
-    <div class="testimonial">
-      <p>"A ProStudio Academy realmente entende do assunto. Recomendo fortemente!"</p>
-      <span class="author">— Juliana, Streamer</span>
-    </div>
-  </div>
-
-  <!-- TIMER -->
-  <div class="timer-box">
-    <h3>Oferta disponível apenas pelos próximos:</h3>
-    <div class="timer" id="countdown">15:00</div>
-  </div>
-
-  <!-- FORMULÁRIO -->
-  <div class="container form-section" id="form">
-    <h2>Garanta seu Guia Grátis</h2>
-    <form id="leadForm">
-      <input type="text" name="nome" placeholder="Seu Nome" required>
-      <input type="email" name="email" placeholder="Seu Email" required>
-      
-      <!-- WhatsApp com seletor de países -->
-      <div style="display:flex; gap:8px; align-items:center; margin:0.7rem 0;">
-        <select id="countryCode"></select>
-        <input type="tel" id="whatsappNumber" placeholder="WhatsApp" style="flex:1; padding:1rem; border-radius:8px; border:none;" required>
-      </div>
-
-      <input type="hidden" name="whatsapp" id="fullWhatsapp">
-      <input type="hidden" name="data" id="data">
-
-      <button type="submit" id="submitBtn">Quero meu Guia Agora</button>
-    </form>
   </div>
 
   <footer>
-    <p>© 2025 ProStudio Academy — <a href="https://instagram.com/prostudio.tech" target="_blank">@prostudio.tech</a></p>
+    © 2025 ProStudio Academy — <a href="https://instagram.com/prostudio.tech" target="_blank">@prostudio.tech</a>
   </footer>
 
   <script>
     // Preenche data automática
     document.getElementById("data").value = new Date().toLocaleString();
 
+    // Submissão para Google Sheets
     const scriptURL = "COLE_AQUI_SEU_SCRIPT_URL";
     const form = document.getElementById("leadForm");
 
-    // Lista reduzida (pode expandir com todos os países via JSON)
-    const countries = [
-      { name: "Brasil", code: "+55", flag: "🇧🇷" },
-      { name: "Estados Unidos", code: "+1", flag: "🇺🇸" },
-      { name: "Portugal", code: "+351", flag: "🇵🇹" },
-      { name: "Reino Unido", code: "+44", flag: "🇬🇧" },
-      { name: "Espanha", code: "+34", flag: "🇪🇸" },
-      { name: "Alemanha", code: "+49", flag: "🇩🇪" },
-      { name: "França", code: "+33", flag: "🇫🇷" },
-      { name: "Itália", code: "+39", flag: "🇮🇹" },
-      { name: "Japão", code: "+81", flag: "🇯🇵" },
-      { name: "Austrália", code: "+61", flag: "🇦🇺" },
-    ];
-
-    const countrySelect = document.getElementById("countryCode");
-    countries.forEach(c => {
-      const option = document.createElement("option");
-      option.value = c.code;
-      option.textContent = `${c.flag} ${c.name} (${c.code})`;
-      if (c.name === "Brasil") option.selected = true;
-      countrySelect.appendChild(option);
-    });
-
     form.addEventListener("submit", e => {
       e.preventDefault();
-      const countryCode = document.getElementById("countryCode").value;
-      const number = document.getElementById("whatsappNumber").value;
-      document.getElementById("fullWhatsapp").value = countryCode + " " + number;
-
       fetch(scriptURL, { method: "POST", body: new FormData(form)})
         .then(response => {
           alert("🎉 Cadastro realizado com sucesso! Baixe seu guia agora.");
